@@ -1,4 +1,4 @@
-#include "displayapp/screens/WatchFaceDigital.h"
+#include "displayapp/screens/WatchFaceDigitalCustom.h"
 
 #include <cstdio>
 #include <lvgl/lvgl.h>
@@ -16,7 +16,7 @@
 
 using namespace Pinetime::Applications::Screens;
 
-WatchFaceDigital::WatchFaceDigital(Controllers::DateTime& dateTimeController,
+WatchFaceDigitalCustom::WatchFaceDigitalCustom(Controllers::DateTime& dateTimeController,
                                    const Controllers::Battery& batteryController,
                                    const Controllers::Ble& bleController,
                                    const Controllers::AlarmController& alarmController,
@@ -90,12 +90,12 @@ WatchFaceDigital::WatchFaceDigital(Controllers::DateTime& dateTimeController,
   Refresh();
 }
 
-WatchFaceDigital::~WatchFaceDigital() {
+WatchFaceDigitalCustom::~WatchFaceDigitalCustom() {
   lv_task_del(taskRefresh);
   lv_obj_clean(lv_scr_act());
 }
 
-void WatchFaceDigital::Refresh() {
+void WatchFaceDigitalCustom::Refresh() {
   statusIcons.Update();
 
   notificationState = notificationManager.AreNewNotificationsAvailable();
@@ -155,10 +155,10 @@ void WatchFaceDigital::Refresh() {
   if (heartbeat.IsUpdated() || heartbeatRunning.IsUpdated()) {
     if (heartbeatRunning.Get()) {
       lv_obj_set_style_local_text_color(heartbeatIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCE1B1B));
-      lv_label_set_text_fmt(heartbeatValue, "%d", heartbeat.Get());
+      lv_label_set_text_fmt(heartbeatValue, "%d BPM", heartbeat.Get());
     } else {
       lv_obj_set_style_local_text_color(heartbeatIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x1B1B1B));
-      lv_label_set_text_static(heartbeatValue, "");
+      lv_label_set_text_static(heartbeatValue, "- BPM");
     }
 
     lv_obj_realign(heartbeatIcon);
