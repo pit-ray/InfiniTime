@@ -9,6 +9,7 @@
 #include "displayapp/screens/Timer.h"
 #include "displayapp/screens/Twos.h"
 #include "displayapp/screens/WatchFaceAnalog.h"
+#include "displayapp/screens/WatchFaceAnalogCustom.h"
 #include "displayapp/screens/WatchFaceCasioStyleG7710.h"
 #include "displayapp/screens/WatchFaceDigital.h"
 #include "displayapp/screens/WatchFaceDigitalCustom.h"

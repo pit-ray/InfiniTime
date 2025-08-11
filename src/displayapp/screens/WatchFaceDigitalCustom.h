@@ -80,7 +80,7 @@ namespace Pinetime {
     template <>
     struct WatchFaceTraits<WatchFace::DigitalCustom> {
       static constexpr WatchFace watchFace = WatchFace::DigitalCustom;
-      static constexpr const char* name = "Digital face (Custom)";
+      static constexpr const char* name = "D-Custom";
 
       static Screens::Screen* Create(AppControllers& controllers) {
         return new Screens::WatchFaceDigitalCustom(controllers.dateTimeController,
