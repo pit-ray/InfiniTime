@@ -2,8 +2,8 @@
 #include <lvgl/lvgl.h>
 #include "displayapp/DisplayApp.h"
 #include "displayapp/Messages.h"
-#include "displayapp/screens/Styles.h"
 #include "displayapp/screens/Screen.h"
+#include "displayapp/screens/Styles.h"
 #include "displayapp/screens/Symbols.h"
 
 using namespace Pinetime::Applications::Screens;
